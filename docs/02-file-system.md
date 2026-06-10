@@ -2,16 +2,12 @@
 
 工作区应该有一个固定根目录，所有 Codex 项目都在这里完成。
 
-示例：
-
-```text
-D:\CodexWorkspace
-```
+示例中统一使用 `<WORKSPACE_ROOT>` 代表你的实际工作区根目录。
 
 ## 推荐结构
 
 ```text
-CodexWorkspace
+<WORKSPACE_ROOT>
 ├── AGENTS.md
 ├── codexworkspace-console.md
 ├── workspace-architecture-and-naming.md

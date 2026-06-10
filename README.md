@@ -1,35 +1,29 @@
 # CodexWorkspace Methodology
 
-最后更新时间：2026-06-10
+CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作区管理方法论。它用一组 Markdown 模板，把项目迁移、目录命名、执行规则、SOP、skills 清单、项目台账和问题复盘放进同一个可维护的工作区。
 
-CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作区管理方法论。它把分散在对话里的规则、项目迁移流程、命名规范、skills 清单、项目台账和问题复盘沉淀成一组可长期维护的 Markdown 文件。
+它适合想把 AI 辅助开发从临时对话变成长期工作系统的人。
 
-这套方法适合希望把 AI 辅助开发从“临时对话”变成“可复利工作系统”的用户。
+## 解决什么问题
 
-## 为什么需要它
+- 项目散落在不同目录，路径和上下文容易混乱。
+- 外部项目迁移进来时，没有统一放置和命名方式。
+- 新建、迁移、归档项目靠临时约定。
+- Codex 出错、返工或踩坑后，没有沉淀为下次可复用的规则。
+- skills、项目状态和入口信息靠记忆维护。
 
-使用 AI coding agent 时，很多问题不是代码能力问题，而是工作区管理问题：
+## 核心思路
 
-- 项目散落在不同目录，路径和上下文经常混乱。
-- 今天约定的规则，换个项目或新会话就丢失。
-- 迁移项目、创建项目、归档项目没有统一流程。
-- agent 犯过的错没有沉淀，下次还会再犯。
-- skills、项目状态、常用入口靠记忆维护。
+- 只保留一个工作区根目录：`<WORKSPACE_ROOT>`。
+- 所有正式项目进入 `projects/` 后再处理。
+- 正式项目使用统一命名：`Project_三位编号_项目名称`。
+- 强执行规则、控制台、命名细则、SOP、项目台账、问题日志和 skills 清单分文件维护。
+- 高频变化的信息进入专门台账，不塞进总控文件。
 
-CodexWorkspace Methodology 用一组简单 Markdown 文件解决这些问题。
-
-## 核心思想
-
-- 只有一个工作根目录，所有项目都先进入这个工作区再处理。
-- 强执行规则、总控入口、命名细则、项目 SOP、项目台账、问题复盘、skills 清单分文件维护。
-- 每个文件只负责一个领域，避免规则在多个地方重复。
-- 新建、迁移、归档项目都有固定流程。
-- Codex 出错、不满意、返工或踩坑后，必须把经验写回日志。
-
-## 推荐文件结构
+## 推荐工作区结构
 
 ```text
-CodexWorkspace
+<WORKSPACE_ROOT>
 ├── AGENTS.md
 ├── codexworkspace-console.md
 ├── workspace-architecture-and-naming.md
@@ -43,17 +37,21 @@ CodexWorkspace
 └── temp/
 ```
 
-## 文件职责
+## 模板
 
-| 文件 | 职责 |
+`templates/` 是本项目唯一的可复制源。
+
+| 模板 | 用途 |
 |---|---|
-| `AGENTS.md` | Codex 强执行规则 |
-| `codexworkspace-console.md` | 工作区总控入口 |
-| `workspace-architecture-and-naming.md` | 目录架构与项目命名细则 |
-| `new-project-sop.md` | 新建项目与迁移外部项目流程 |
-| `projects-index.md` | 正式项目台账 |
-| `codex-issue-log.md` | 错误、不满意点、返工和踩坑复盘 |
-| `codex-skills-inventory.md` | Codex skills 清单 |
+| `AGENTS.template.md` | Codex 强执行规则 |
+| `codexworkspace-console.template.md` | 工作区总控入口 |
+| `workspace-architecture-and-naming.template.md` | 目录架构与项目命名细则 |
+| `new-project-sop.template.md` | 新建项目与迁移外部项目流程 |
+| `projects-index.template.md` | 正式项目台账 |
+| `codex-issue-log.template.md` | 错误、不满意点、返工和踩坑复盘 |
+| `codex-skills-inventory.template.md` | Codex skills 清单 |
+
+模板中的 `<WORKSPACE_ROOT>`、`YYYY-MM-DD`、示例项目名和示例编号都需要按自己的工作区替换。
 
 ## 文档导览
 
@@ -62,56 +60,30 @@ CodexWorkspace
 - [Codex 执行规则](docs/03-agent-rules.md)
 - [项目生命周期](docs/04-project-lifecycle.md)
 - [维护机制](docs/05-maintenance.md)
-- [GitHub 发布清单](docs/publishing-checklist.md)
-
-## 示例
-
-- [最小工作区示例](examples/minimal-workspace/)
-
-最小示例与真实 `D:\CodexWorkspace` 工作区规则保持同构：保留工作区边界、迁移规则、命名模板、项目 SOP 和项目台账结构。为便于开源复用，`codex-issue-log.md` 使用示例复盘条目，`codex-skills-inventory.md` 只列 Codex 原生系统 skills 示例，不包含个人完整安装清单。
-
-## 模板
-
-`templates/` 目录提供可复制的 Markdown 模板：
-
-- `AGENTS.template.md`
-- `codexworkspace-console.template.md`
-- `workspace-architecture-and-naming.template.md`
-- `new-project-sop.template.md`
-- `projects-index.template.md`
-- `codex-issue-log.template.md`
-- `codex-skills-inventory.template.md`
 
 ## 快速开始
 
-1. 选择一个固定工作区目录，例如 `D:\CodexWorkspace`。
-2. 将 `templates/` 中的文件复制到工作区根目录。
-3. 按你的实际路径和命名规则调整模板。
-4. 在全局 Codex 规则中要求所有外部项目先迁移到该工作区。
+1. 选择一个固定工作区目录，用它替换模板里的 `<WORKSPACE_ROOT>`。
+2. 将 `templates/` 中的模板复制到工作区根目录，并去掉 `.template` 后缀。
+3. 按自己的命名规则、项目类型和 skills 来源调整模板内容。
+4. 在全局 Codex 规则中要求外部项目先迁移到该工作区。
 5. 新建或迁移项目时，按 `new-project-sop.md` 执行。
-6. 每次项目状态变化、skills 变化或问题复盘后，更新对应文档。
+6. 项目状态变化、skills 变化或问题复盘后，更新对应文档。
 
 ## 适配方式
 
 你可以按自己的工作习惯调整：
 
-- 工作区根目录名称。
+- 工作区根目录。
 - 项目命名格式。
 - 项目类型枚举。
-- README 模板字段。
+- README 字段。
 - skills 来源分组方式。
 - 问题复盘字段。
 
-## 适用场景
-
-- 多个 Codex 项目需要统一管理。
-- 经常在不同项目之间切换，需要避免路径混乱。
-- 希望把 AI coding agent 的错误和经验持续复利。
-- 希望将本地工作区规则沉淀成可复用、可发布的方法论。
-
 ## 贡献
 
-欢迎贡献新的模板、真实使用案例、工作区规则、复盘模式和文档改进。请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
+欢迎贡献更清晰的模板、真实使用案例、工作区规则和文档改进。请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
 ## License
 

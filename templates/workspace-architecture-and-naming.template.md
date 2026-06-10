@@ -126,7 +126,7 @@ Project_006_客户研究-dashboard
 示例：
 
 ```text
-外部项目：C:\ExternalProjects\my app
+外部项目：<EXTERNAL_PROJECT_PATH>
 迁移后：<WORKSPACE_ROOT>\projects\Project_007_我的应用
 ```
 
