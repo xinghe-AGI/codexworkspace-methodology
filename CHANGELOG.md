@@ -9,3 +9,4 @@ All notable changes to this project will be documented in this file.
 - Added a minimal workspace example.
 - Added MIT License.
 - Added contributing guide.
+- Synced templates and minimal example with the local `D:\CodexWorkspace` rule structure, while keeping issue logs and skills inventory safe for open-source reuse.

@@ -68,6 +68,8 @@ CodexWorkspace
 
 - [最小工作区示例](examples/minimal-workspace/)
 
+最小示例与真实 `D:\CodexWorkspace` 工作区规则保持同构：保留工作区边界、迁移规则、命名模板、项目 SOP 和项目台账结构。为便于开源复用，`codex-issue-log.md` 使用示例复盘条目，`codex-skills-inventory.md` 只列 Codex 原生系统 skills 示例，不包含个人完整安装清单。
+
 ## 模板
 
 `templates/` 目录提供可复制的 Markdown 模板：
