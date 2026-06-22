@@ -2,7 +2,7 @@
 
 用途：将本文件内容复制到 Codex 的「设置 -> 个性化 -> 自定义指令」中，作为全局工作区边界规则。
 
-本模板只保留全局规则中必要的工作区边界、最终回复前检查和全局 skill 配置变更约束。使用前请将 `<WORKSPACE_ROOT>` 替换为你的实际工作区根目录，例如 `X:\YourCodexWorkspace` 或 `/Users/you/YourCodexWorkspace`。
+本模板只保留全局规则中必要的工作区边界、治理触发器和全局 skill 配置变更约束。使用前请将 `<WORKSPACE_ROOT>` 替换为你的实际工作区根目录，例如 `X:\YourCodexWorkspace` 或 `/Users/you/YourCodexWorkspace`。
 
 ```markdown
 # 全局 Codex 规则
@@ -20,7 +20,7 @@
 
 ## 最终回复前检查
 
-- 最终回复前必须回看本轮是否触发治理动作：项目新建/迁移/归档、skill 安装/删除/重命名/调整、规则变更、错误/返工/遗漏。
+- 最终回复前必须回看本轮是否触发治理动作：项目新建/迁移/归档、skill 安装/删除/重命名/调整、规则变更、自动化变更、治理复盘包创建/更新、错误/返工/遗漏。
 - 如果触发 skill 变更，必须先确认 `<WORKSPACE_ROOT>\codex-skills-inventory.md` 已同步更新；如果未更新，不得先发送完成回复。
 - 如果触发规则变更，必须先确认 `<WORKSPACE_ROOT>\codexworkspace-console.md` 已同步更新最后更新时间或相关索引说明。
 - 如果触发定时自动化、提醒、巡检或外部投递任务的创建、更新、暂停、恢复或删除，必须先确认 `<WORKSPACE_ROOT>\automation-index.md` 已同步更新。
@@ -45,4 +45,5 @@
 
 - 将 `<WORKSPACE_ROOT>` 替换为你的实际工作区根目录。
 - 如果你的正式项目命名格式不是 `Project_编号_项目名称`，请同步替换为自己的项目命名规则。
+- 本文件只写全局触发器；治理档案馆、自动化和项目规则的详细说明仍应维护在工作区内的 `AGENTS.md`、`automation-index.md` 和 `governance\reviews-index.md`。
 - 不要在全局自定义指令中写入 `App Secret`、token、邮箱、飞书群 ID 或 GitHub 个人访问令牌。
