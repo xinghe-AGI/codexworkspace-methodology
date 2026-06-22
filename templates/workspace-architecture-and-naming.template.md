@@ -11,7 +11,7 @@
 - `codexworkspace-console.md` 是工作区总控入口。
 - `AGENTS.md` 是 Codex 执行规则。
 - 本文件负责把目录职责、项目放置和命名规则写成可执行细则。
-- 本文件不记录项目状态、入口命令或运行方式；这些内容由 `projects-index.md` 或项目 README 维护。
+- 本文件不记录项目状态、入口命令、运行方式、自动化状态或治理复盘正文；项目内容由 `projects-index.md` 或项目 README 维护，自动化状态由 `automation-index.md` 维护，治理复盘包由 `governance\reviews-index.md` 维护。
 
 ## 02 根目录结构
 
@@ -29,6 +29,7 @@
 ├── new-project-sop.md
 ├── projects-index.md
 ├── automation-index.md
+├── governance\
 ├── projects\
 ├── shared\
 ├── archives\
@@ -40,11 +41,12 @@
 ## 03 标准目录职责
 
 - `projects\`：正式项目目录，所有新建项目和迁移后的外部项目默认放在这里。
+- `governance\`：工作区治理档案馆，保存完整复盘包、整改记录和证据材料，不占项目编号。
 - `shared\`：跨项目共享资料、模板、参考材料和可复用脚本，不占项目编号。
 - `archives\`：已完成、暂停或历史项目归档位置，归档项目保留原编号和项目名。
 - `temp\`：短期实验、一次性验证、临时文件，不占正式项目编号。
 
-如果某个内容会持续维护、运行或迭代，应放入 `projects\`；如果只是临时验证，应放入 `temp\`。
+如果某个内容会持续维护、运行或迭代，应放入 `projects\`；如果只是临时验证，应放入 `temp\`；如果是跨项目治理复盘、整改记录或证据材料，应放入 `governance\`。
 
 ## 04 项目命名规则
 
@@ -135,4 +137,4 @@ Project_006_客户研究-dashboard
 
 根目录全局文件职责以 [codexworkspace-console.md](codexworkspace-console.md) 为准。
 
-本文件只维护目录架构与命名规则；项目状态和使用入口由 [projects-index.md](projects-index.md) 或项目 README 维护，自动化状态由 [automation-index.md](automation-index.md) 维护。
+本文件只维护目录架构与命名规则；项目状态和使用入口由 [projects-index.md](projects-index.md) 或项目 README 维护，自动化状态由 [automation-index.md](automation-index.md) 维护，治理复盘包由 [governance\reviews-index.md](governance/reviews-index.md) 维护。

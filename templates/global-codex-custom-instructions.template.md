@@ -24,6 +24,7 @@
 - 如果触发 skill 变更，必须先确认 `<WORKSPACE_ROOT>\codex-skills-inventory.md` 已同步更新；如果未更新，不得先发送完成回复。
 - 如果触发规则变更，必须先确认 `<WORKSPACE_ROOT>\codexworkspace-console.md` 已同步更新最后更新时间或相关索引说明。
 - 如果触发定时自动化、提醒、巡检或外部投递任务的创建、更新、暂停、恢复或删除，必须先确认 `<WORKSPACE_ROOT>\automation-index.md` 已同步更新。
+- 如果创建或更新治理复盘包，必须先确认 `<WORKSPACE_ROOT>\governance\reviews-index.md` 已同步更新。
 - 如果出现错误、不满意结果、返工、规则理解偏差或遗漏清单维护，必须先确认 `<WORKSPACE_ROOT>\codex-issue-log.md` 已记录处理完成后的复盘。
 - 最终回复中要明确说明这些治理文件是否已更新，不能只说明业务文件或安装动作完成。
 

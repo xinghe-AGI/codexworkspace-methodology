@@ -39,6 +39,7 @@ Codex 的强执行规则集中维护在 [AGENTS.md](AGENTS.md)。
 ├── new-project-sop.md
 ├── projects-index.md
 ├── automation-index.md
+├── governance\
 ├── projects\
 ├── shared\
 ├── archives\
@@ -55,6 +56,7 @@ Codex 的强执行规则集中维护在 [AGENTS.md](AGENTS.md)。
 - `new-project-sop.md`：记录新建项目、迁移外部项目、初始化项目的标准流程。
 - `projects-index.md`：记录正式项目编号、类型、状态、路径、使用入口和最后更新时间。
 - `automation-index.md`：记录定时自动化、提醒、巡检、报告生成和外部投递任务。
+- `governance\`：治理档案馆，保存完整复盘包、整改记录和证据材料；总索引见 [governance\reviews-index.md](governance/reviews-index.md)。
 - `projects\`、`shared\`、`archives\`、`temp\`：一级工作目录，详细职责见 [workspace-architecture-and-naming.md](workspace-architecture-and-naming.md)。
 
 Codex 应用级的「设置 -> 个性化 -> 自定义指令」可参考方法论项目中的 `templates/global-codex-custom-instructions.template.md`。该文件不放在工作区根目录运行，而是作为复制到 Codex 全局设置中的脱敏模板。
@@ -82,6 +84,8 @@ Project_三位编号_项目名称
 处理完成后再记录复盘，避免写未确认的临时判断。
 
 建议定期复盘 [codex-issue-log.md](codex-issue-log.md)：整理相似错误、重复复发模式、已有规则覆盖情况和防复发待办。复盘报告可先写入 `temp\` 下的 Markdown 或文本文件，再按“短摘要 + 附件”的方式投递到飞书、邮件或其他协作工具。
+
+当复盘需要长期保存整改行为、验证状态或证据材料时，应升级为 [governance](governance/README.md) 复盘包；`codex-issue-log.md` 只保留短记录和复盘包链接。
 
 ## 07 可选扩展区
 

@@ -1,6 +1,6 @@
 # CodexWorkspace Methodology
 
-CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作区管理方法论。它用一组 Markdown 模板，把项目迁移、目录命名、执行规则、SOP、skills 清单、项目台账、自动化台账和问题复盘放进同一个可维护的工作区。
+CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作区管理方法论。它用一组 Markdown 模板，把项目迁移、目录命名、执行规则、SOP、skills 清单、项目台账、自动化台账、治理档案和问题复盘放进同一个可维护的工作区。
 
 它适合想把 AI 辅助开发从临时对话变成长期工作系统的人。
 
@@ -13,6 +13,7 @@ CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作
 - skills、项目状态和入口信息靠记忆维护。
 - 自动化、外部通知和报告投递缺少安全边界，容易出现“API 成功但实际不可读”或未经确认的信息外发。
 - `codex-issue-log.md` 长期积累后，缺少定期归纳相似错误、生成防复发待办并投递给人的机制。
+- 完整复盘、整改行为和证据材料如果都塞进 issue log，长期会变成难以维护的巨型文件。
 
 ## 核心思路
 
@@ -21,6 +22,7 @@ CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作
 - 正式项目使用统一命名：`Project_三位编号_项目名称`。
 - 强执行规则、控制台、命名细则、SOP、项目台账、问题日志和 skills 清单分文件维护。
 - 高频变化的信息进入专门台账，不塞进总控文件。
+- 完整治理复盘进入 `governance/`，`codex-issue-log.md` 只保留短记录和复盘包链接。
 
 ## 推荐工作区结构
 
@@ -32,6 +34,7 @@ CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作
 ├── new-project-sop.md
 ├── projects-index.md
 ├── automation-index.md
+├── governance/
 ├── codex-issue-log.md
 ├── codex-skills-inventory.md
 ├── projects/
@@ -55,6 +58,7 @@ CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作
 | `automation-index.template.md` | 定时自动化、提醒、巡检和外部投递台账 |
 | `codex-issue-log.template.md` | 错误、不满意点、返工和踩坑复盘 |
 | `codex-skills-inventory.template.md` | Codex skills 清单 |
+| `governance/` | 治理档案馆模板，包含复盘包索引、复盘正文、整改记录和证据目录 |
 
 模板中的 `<WORKSPACE_ROOT>`、`YYYY-MM-DD`、示例项目名和示例编号都需要按自己的工作区替换。
 
@@ -66,6 +70,7 @@ CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作
 - [项目生命周期](docs/04-project-lifecycle.md)
 - [维护机制](docs/05-maintenance.md)
 - [自动化与外部投递](docs/06-automation-and-external-delivery.md)
+- [治理档案馆](docs/07-governance-archive.md)
 
 典型自动化案例：每周读取 `codex-issue-log.md` 和 `AGENTS.md`，整理相似错误、复发模式和防复发待办，生成报告文件后通过飞书等协作工具发送短摘要和附件。
 
@@ -79,6 +84,7 @@ CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作
 6. 新建或迁移项目时，按 `new-project-sop.md` 执行。
 7. 项目状态变化、skills 变化、自动化变化或问题复盘后，更新对应文档。
 8. 创建定时自动化或外部通知前，先完成真实链路验证、信息披露确认和展示效果验证，并更新 `automation-index.md`。
+9. 重复问题、重要返工或需要证据留存的复盘，创建 `governance/` 复盘包，并在 `codex-issue-log.md` 中保留短记录和链接。
 
 ## 适配方式
 
@@ -109,4 +115,3 @@ GitHub: [https://github.com/xinghe-AGI](https://github.com/xinghe-AGI)
 ## License
 
 MIT License. See [LICENSE](LICENSE).
-
