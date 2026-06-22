@@ -15,6 +15,7 @@
 - 原因分析：
 - 处理方式：
 - 下次避免复发的规则：
+- 复盘包：`governance\reviews\YYYY\YYYY-MM-DD_slug\`（如无需长期归档可留空）
 - 关联文件或命令：
 ```
 
@@ -35,8 +36,11 @@
   - YYYY-MM-DD：原条目标题或简要说明
   - YYYY-MM-DD：原条目标题或简要说明
 - 标注：已合并 / 观察中 / 复发
+- 复盘包：`governance\reviews\YYYY\YYYY-MM-DD_slug\`（如无需长期归档可留空）
 - 关联文件或命令：
 ```
+
+治理复盘包链接：`codex-issue-log.md` 只保留短记录和复盘包路径；完整长复盘、整改行为和证据材料应进入 `governance\`。
 
 合并原则：
 
@@ -55,6 +59,7 @@
 - 原因分析：任务开始前没有先检查项目路径，也没有执行外部项目迁移 SOP。
 - 处理方式：停止修改外部路径，获得用户确认后，将项目复制到 `projects\Project_001_示例项目`，后续只操作工作区副本。
 - 下次避免复发的规则：任何外部项目都必须先说明来源路径和迁移目的，经用户同意后再复制到工作区。
+- 复盘包：`governance\reviews\YYYY\YYYY-MM-DD_slug\`（如无需长期归档可留空）
 - 关联文件或命令：`new-project-sop.md`、`workspace-architecture-and-naming.md`
 
 ### 示例：外部通知报告展示不完整
@@ -65,4 +70,5 @@
 - 原因分析：聊天工具对 Markdown、富文本卡片或多行文本有展示限制；长报告不适合塞进单条消息。
 - 处理方式：改为先发送单行摘要，再把完整报告写入 `.md` 或 `.txt` 文件并作为附件发送。
 - 下次避免复发的规则：外部投递必须同时验证配置、真实发送和客户端展示效果；长报告默认使用“短摘要 + 附件”。
+- 复盘包：`governance\reviews\YYYY\YYYY-MM-DD_slug\`（如无需长期归档可留空）
 - 关联文件或命令：`AGENTS.md`、`temp\report-YYYY-MM-DD.md`

@@ -14,6 +14,7 @@
 ├── new-project-sop.md
 ├── projects-index.md
 ├── automation-index.md
+├── governance/
 ├── codex-issue-log.md
 ├── codex-skills-inventory.md
 ├── projects/
@@ -25,6 +26,7 @@
 ## 目录职责
 
 - `projects/`：正式项目和迁移后的外部项目。
+- `governance/`：工作区治理档案馆，保存完整复盘包、整改记录和证据材料。
 - `shared/`：跨项目共享资料、模板、脚本和参考材料。
 - `archives/`：已完成、暂停或停止维护的项目。
 - `temp/`：短期实验和一次性验证。
@@ -49,4 +51,4 @@ Project_003_AI写作工具
 
 ## 根目录规则
 
-根目录只放全局规则、索引、台账和一级工作目录。正式项目不要直接放在根目录。
+根目录只放全局规则、索引、台账、治理档案和一级工作目录。正式项目不要直接放在根目录。

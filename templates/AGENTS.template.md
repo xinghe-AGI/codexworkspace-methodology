@@ -9,6 +9,7 @@
 - `codex-issue-log.md`：记录 Codex 使用过程中的错误、不满意点、返工点和踩坑复盘。
 - `projects-index.md`：正式项目台账，记录项目编号、名称、类型、状态、路径、使用入口和最后更新时间。
 - `automation-index.md`：自动化台账，记录定时自动化、提醒、巡检、报告生成和外部投递任务。
+- `governance\reviews-index.md`：治理复盘包索引，记录完整复盘、整改行为和证据材料的归档状态。
 - 本文件只记录强执行规则，不复制其他文件全文。
 
 ## 工作区边界
@@ -48,6 +49,15 @@
 - 聊天工具中完整报告优先使用“短摘要 + 附件”模式，不要把长报告塞进单条消息。
 - 自动化不应默认修改治理文件；除非用户明确授权，否则只输出报告、建议或待办。
 - 如果工作区维护 `automation-index.md`，创建、更新、暂停、恢复或删除自动化后，必须同步更新自动化台账。
+- 当自动化发现重复复盘、长期未关闭整改或需要证据留存的问题时，应建议创建或更新 `governance\reviews\` 下的复盘包，而不是把长报告塞进 `codex-issue-log.md`。
+
+## 治理档案馆
+
+- `codex-issue-log.md` 只记录短复盘、问题索引和指向复盘包的链接。
+- 重复问题、重要返工、跨项目规则变化、自动化整改和需要证据留存的问题，应升级为 `governance\reviews\YYYY\YYYY-MM-DD_slug\` 复盘包。
+- 复盘包固定包含 `review.md`、`actions.md` 和 `evidence\`。
+- 创建或更新复盘包后，必须同步更新 `governance\reviews-index.md`。
+- 复盘包不得记录密钥、token、App Secret、完整飞书群 ID、GitHub 个人访问令牌或其他完整凭据。
 
 ## 文档维护
 
@@ -55,6 +65,7 @@
 - 出现错误、不满意结果、返工、踩坑或规则理解偏差，并且处理完成后，必须更新 `codex-issue-log.md`。
 - 自动化或外部投递出现链路失败、权限问题、披露风险拦截或客户端展示异常时，处理完成后必须更新 `codex-issue-log.md`。
 - 创建、更新、暂停、恢复或删除自动化时，如工作区存在 `automation-index.md`，必须同步更新该台账。
+- 创建或更新治理复盘包时，必须同步更新 `governance\reviews-index.md`；如果新增了长期治理目录或规则，也要更新 `codexworkspace-console.md` 和 `workspace-architecture-and-naming.md`。
 - 新建或迁移项目时，如项目管理规则发生变化，需要同步更新控制台或对应 SOP 文件。
 - 新建、迁移、暂停、恢复或归档正式项目时，必须更新 `projects-index.md`。
 - 文档更新应保持简洁，优先沉淀可复用规则和复盘，不记录无意义流水账。
