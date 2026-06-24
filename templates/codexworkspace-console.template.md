@@ -56,7 +56,7 @@ Codex 的强执行规则集中维护在 [AGENTS.md](AGENTS.md)。
 - `new-project-sop.md`：记录新建项目、迁移外部项目、初始化项目的标准流程。
 - `projects-index.md`：记录正式项目编号、类型、状态、路径、使用入口和最后更新时间。
 - `automation-index.md`：记录定时自动化、提醒、巡检、报告生成和外部投递任务。
-- `governance\`：治理档案馆，保存完整复盘包、整改记录和证据材料；总索引见 [governance\reviews-index.md](governance/reviews-index.md)。
+- `governance\`：治理档案馆，保存治理执行模板、完整复盘包、整改记录和证据材料；总索引见 [governance\reviews-index.md](governance/reviews-index.md)。
 - `projects\`、`shared\`、`archives\`、`temp\`：一级工作目录，详细职责见 [workspace-architecture-and-naming.md](workspace-architecture-and-naming.md)。
 
 Codex 应用级的「设置 -> 个性化 -> 自定义指令」可参考方法论项目中的 `templates/global-codex-custom-instructions.template.md`。该文件不放在工作区根目录运行，而是作为复制到 Codex 全局设置中的脱敏模板。
@@ -85,9 +85,22 @@ Project_三位编号_项目名称
 
 建议定期复盘 [codex-issue-log.md](codex-issue-log.md)：整理相似错误、重复复发模式、已有规则覆盖情况和防复发待办。复盘报告可先写入 `temp\` 下的 Markdown 或文本文件，再按“短摘要 + 附件”的方式投递到飞书、邮件或其他协作工具。
 
-当复盘需要长期保存整改行为、验证状态或证据材料时，应升级为 [governance](governance/README.md) 复盘包；`codex-issue-log.md` 只保留短记录和复盘包链接。
+日常执行优先查 [governance\playbooks](governance/playbooks) 下的 checklist/runbook；当复盘需要长期保存整改行为、验证状态或证据材料时，再升级为 [governance](governance/README.md) 复盘包。`codex-issue-log.md` 只保留短记录、入口索引、复发标注和复盘包链接。
 
-## 07 可选扩展区
+`codex-issue-log.md` 顶部维护“已归档重复问题索引”；A001 定时复盘命中已治理问题簇时，不重复生成长复盘，只统计是否复发、是否突破现有规则、是否需要更新对应治理包。候选问题簇继续分析，待确认高频后再创建完整治理包。
+
+## 07 治理执行模板
+
+以下模板用于把已知规则前置成默认动作，避免只在 issue log 里沉淀经验：
+
+- [task-intake-and-closeout-checklist.md](governance/playbooks/task-intake-and-closeout-checklist.md)：任务分型预检与收尾检查。
+- [external-delivery-checklist.md](governance/playbooks/external-delivery-checklist.md)：飞书、邮件、GitHub、网页等外部投递前检查。
+- [windows-safe-editing.md](governance/playbooks/windows-safe-editing.md)：Windows/PowerShell 写入与编码安全约定。
+- [sandbox-and-escalation-decision-tree.md](governance/playbooks/sandbox-and-escalation-decision-tree.md)：sandbox 失败后的排查与提权顺序。
+- [multi-surface-sync-matrix.md](governance/playbooks/multi-surface-sync-matrix.md)：skill、文档、资产和多副本同步矩阵。
+- [canonical-artifact-check.md](governance/playbooks/canonical-artifact-check.md)：修改前的权威文件、字段口径和运行副本检查。
+
+## 08 可选扩展区
 
 以下内容不是工作区初始化必需项。只有当对应信息开始稳定复用时，再补充为新的控制台入口，避免一开始就把控制台写成超长文件：
 

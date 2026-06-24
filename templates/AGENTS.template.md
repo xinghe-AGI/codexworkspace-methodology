@@ -9,6 +9,7 @@
 - `codex-issue-log.md`：记录 Codex 使用过程中的错误、不满意点、返工点和踩坑复盘。
 - `projects-index.md`：正式项目台账，记录项目编号、名称、类型、状态、路径、使用入口和最后更新时间。
 - `automation-index.md`：自动化台账，记录定时自动化、提醒、巡检、报告生成和外部投递任务。
+- `governance\playbooks\`：治理执行模板目录，记录任务分型、外部投递、Windows 写入、sandbox 分流、多副本同步和 canonical artifact 检查等 checklist/runbook。
 - `governance\reviews-index.md`：治理复盘包索引，记录完整复盘、整改行为和证据材料的归档状态。
 - 本文件只记录强执行规则，不复制其他文件全文。
 
@@ -42,7 +43,7 @@
 ## 自动化与外部投递
 
 - 创建定时自动化、提醒、巡检、报告发送或外部通知前，必须确认任务目标、读取范围、运行时间、接收方和失败处理方式。
-- 推荐定期整理 `codex-issue-log.md`：识别相似错误、复发模式、已有规则覆盖情况和防复发待办，并生成报告供用户审查。
+- 推荐定期整理 `codex-issue-log.md`：识别相似错误、复发模式、已有规则覆盖情况和防复发待办，并生成报告供用户审查；定时复盘必须先读取 issue log 顶部“已归档重复问题索引”和 `governance\reviews-index.md`。
 - 自动化读取本地文件并发送到飞书、邮件、GitHub、Slack、网页或其他外部系统前，必须说明外部披露风险并获得用户明确批准。
 - 外部通道不能只看本地配置或 masked secret，必须先用最小内容做真实发送或真实调用验证。
 - API 返回成功不等于用户可读；长报告必须验证目标客户端展示效果。
@@ -53,12 +54,33 @@
 
 ## 治理档案馆
 
-- `codex-issue-log.md` 只记录短复盘、问题索引和指向复盘包的链接。
+- `codex-issue-log.md` 只记录短复盘、入口索引、复发标注和指向复盘包的链接；旧日期章节是原始发生记录，不承担完整长复盘职责。
+- `governance\playbooks\` 保存可重复执行的 checklist 和 runbook；具体操作模板放这里，不把细节回填到 `AGENTS.md`。
 - 重复问题、重要返工、跨项目规则变化、自动化整改和需要证据留存的问题，应升级为 `governance\reviews\YYYY\YYYY-MM-DD_slug\` 复盘包。
 - 复盘包固定包含 `review.md`、`actions.md` 和 `evidence\`。
-- 创建或更新复盘包后，必须同步更新 `governance\reviews-index.md`。
+- 创建或更新复盘包后，必须同步更新 `governance\reviews-index.md`；如果问题簇只是候选，也可先在 reviews-index 和 issue log 顶部索引登记为 `候选`。
 - 复盘包不得记录密钥、token、App Secret、完整飞书群 ID、GitHub 个人访问令牌或其他完整凭据。
 
+## 执行模板入口
+
+- 任务分型预检和收尾检查：`governance\playbooks\task-intake-and-closeout-checklist.md`
+- 外部投递前检查：`governance\playbooks\external-delivery-checklist.md`
+- Windows 安全写入：`governance\playbooks\windows-safe-editing.md`
+- sandbox 与提权分流：`governance\playbooks\sandbox-and-escalation-decision-tree.md`
+- 多副本同步矩阵：`governance\playbooks\multi-surface-sync-matrix.md`
+- canonical artifact 检查：`governance\playbooks\canonical-artifact-check.md`
+- 本文件只保留强规则和治理触发器；执行细节优先查对应 playbook。
+
+
+## 最终回复前检查
+
+- 最终回复前必须回看本轮是否触发了工作区治理动作：新建/迁移/归档项目，安装/删除/重命名/调整 skill，修改工作区规则，或出现错误/返工/遗漏。
+- 如果触发 skill 变更，必须确认 `codex-skills-inventory.md` 已同步更新；如果未更新，不得先发送完成回复。
+- 如果触发规则变更，必须确认 `codexworkspace-console.md` 已同步更新最后更新时间或相关索引说明。
+- 如果触发自动化变更，必须确认 `automation-index.md` 已同步更新；如果未更新，不得先发送完成回复。
+- 如果创建或更新治理复盘包，必须确认 `governance\reviews-index.md` 已同步更新。
+- 如果出现错误、不满意结果、返工、规则理解偏差或遗漏清单维护，必须确认 `codex-issue-log.md` 已记录处理完成后的复盘。
+- 最终回复中要明确说明这些治理文件是否已更新，不能只说明业务文件或安装动作完成。
 ## 文档维护
 
 - 用户改变工作区规则、命名规则、目录结构或长期工作方式时，必须同步更新 `codexworkspace-console.md`，并更新其中的 `最后更新时间`。

@@ -24,6 +24,15 @@ CodexWorkspace Methodology 是一套面向 Codex/AI coding agent 的本地工作
 - 高频变化的信息进入专门台账，不塞进总控文件。
 - 完整治理复盘进入 `governance/`，`codex-issue-log.md` 只保留短记录和复盘包链接。
 
+## 复盘系统重构
+
+本项目将 Codex 复盘机制拆成分层系统，避免 `codex-issue-log.md` 变成越来越难维护的长流水账：
+
+- `codex-issue-log.md` 只保留短记录、入口索引、复发标注和复盘包链接。
+- `governance/reviews-index.md` 作为完整复盘包总台账，记录状态、复发次数、最近发生、整改状态和最后验证时间。
+- `governance/reviews/...` 承载完整复盘、整改动作和证据材料，证据放入具体复盘包的 `evidence/`。
+- A001 定时复盘先读取问题簇索引；已治理问题只统计复发和是否突破现有规则，不重复生成长复盘。
+- `governance/playbooks/` 承载可复用 checklist/runbook，让任务预检、外部投递、Windows 写入、sandbox 分流、多副本同步和 canonical artifact 检查有统一入口。
 ## 推荐工作区结构
 
 ```text
